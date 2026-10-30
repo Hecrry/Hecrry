@@ -1,119 +1,120 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 300" width="100%" role="img" aria-label="HERY - Lv. Pupil - Competitive Programmer and Tutor">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="100%" role="img" aria-label="HERY - Grado 3 - Programador competitivo y tutor">
   <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#0f0a24"/>
-      <stop offset="0.55" stop-color="#2a0f55"/>
-      <stop offset="1" stop-color="#6a1b7a"/>
+    <radialGradient id="bg" cx="50%" cy="55%" r="75%">
+      <stop offset="0" stop-color="#1a1442"/>
+      <stop offset="0.6" stop-color="#0b0a1f"/>
+      <stop offset="1" stop-color="#05040d"/>
+    </radialGradient>
+    <linearGradient id="wisp" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3b82f6" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#60a5fa"/>
+      <stop offset="1" stop-color="#7c3aed" stop-opacity="0"/>
     </linearGradient>
-    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#ffd166"/>
-      <stop offset="1" stop-color="#ff4fa3"/>
+    <linearGradient id="titlefill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#a5b4fc"/>
     </linearGradient>
-    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#29e7ff"/>
-      <stop offset="0.5" stop-color="#a855f7"/>
-      <stop offset="1" stop-color="#ff4fa3"/>
-    </linearGradient>
-    <mask id="slits">
-      <rect width="900" height="300" fill="#fff"/>
-      <rect x="340" y="150" width="220" height="3" fill="#000"/>
-      <rect x="340" y="164" width="220" height="5" fill="#000"/>
-      <rect x="340" y="180" width="220" height="7" fill="#000"/>
-      <rect x="340" y="198" width="220" height="9" fill="#000"/>
-    </mask>
-    <filter id="blur" x="-20%" y="-50%" width="140%" height="200%">
-      <feGaussianBlur stdDeviation="7"/>
+    <filter id="blur" x="-30%" y="-60%" width="160%" height="220%">
+      <feGaussianBlur stdDeviation="9"/>
     </filter>
-    <path id="petal" d="M0 0 C 6 -7 15 -2 10 8 C 6 15 -3 10 0 0 Z"/>
+    <filter id="soft" x="-30%" y="-60%" width="160%" height="220%">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
   </defs>
 
   <style>
-    .sans { font-family: 'Trebuchet MS', 'Segoe UI', Impact, sans-serif; }
+    .sans { font-family: 'Impact', 'Trebuchet MS', 'Segoe UI', sans-serif; }
     .mono { font-family: 'Courier New', Consolas, monospace; }
-    .fall { animation-name: fall; animation-timing-function: linear; animation-iteration-count: infinite; }
-    @keyframes fall {
-      0%   { transform: translate(0, -30px) rotate(0deg); opacity: 0; }
-      10%  { opacity: .95; }
-      100% { transform: translate(140px, 330px) rotate(560deg); opacity: .5; }
+    .jp   { font-family: 'Yu Gothic', 'Noto Sans CJK JP', 'MS Gothic', 'Hiragino Sans', sans-serif; }
+
+    .spin  { transform-box: fill-box; transform-origin: center; animation: spin 26s linear infinite; }
+    .spinr { transform-box: fill-box; transform-origin: center; animation: spin 38s linear infinite reverse; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .flow { stroke-dasharray: 26 34; animation: flow 3.2s linear infinite; }
+    .flow2 { stroke-dasharray: 14 40; animation: flow 4.6s linear infinite; }
+    @keyframes flow { to { stroke-dashoffset: -120; } }
+
+    .slash { stroke-dasharray: 800; stroke-dashoffset: 800; animation: slash 6s ease-out infinite; }
+    .slash2 { stroke-dasharray: 800; stroke-dashoffset: 800; animation: slash 6s ease-out infinite; animation-delay: .18s; }
+    @keyframes slash {
+      0%   { stroke-dashoffset: 800; opacity: 0; }
+      4%   { opacity: 1; }
+      16%  { stroke-dashoffset: 0; opacity: 1; }
+      70%  { stroke-dashoffset: 0; opacity: .85; }
+      100% { stroke-dashoffset: 0; opacity: 0; }
     }
-    .tw { animation: tw 3s ease-in-out infinite; }
-    @keyframes tw { 0%,100% { opacity: .15; } 50% { opacity: 1; } }
-    .glow { animation: glow 3s ease-in-out infinite; }
-    @keyframes glow { 0%,100% { opacity: .35; } 50% { opacity: .9; } }
+
+    .pulse { animation: pulse 3.4s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { opacity: .35; } 50% { opacity: .95; } }
+
+    .ember { animation: rise linear infinite; }
+    @keyframes rise {
+      0%   { transform: translateY(0); opacity: 0; }
+      15%  { opacity: .9; }
+      100% { transform: translateY(-300px); opacity: 0; }
+    }
+
+    .glitch-r { animation: gr 5s steps(1) infinite; }
+    .glitch-c { animation: gc 5s steps(1) infinite; }
+    @keyframes gr { 0%,92%,100% { transform: translate(0,0); opacity: 0; } 93% { transform: translate(5px,-2px); opacity: .9; } 96% { transform: translate(-4px,2px); opacity: .9; } 98% { transform: translate(0,0); opacity: 0; } }
+    @keyframes gc { 0%,92%,100% { transform: translate(0,0); opacity: 0; } 94% { transform: translate(-5px,1px); opacity: .9; } 97% { transform: translate(4px,-2px); opacity: .9; } 99% { transform: translate(0,0); opacity: 0; } }
+
     .blink { animation: blink 1.2s steps(1) infinite; }
     @keyframes blink { 50% { opacity: 0; } }
-    .win { animation: tw 4s ease-in-out infinite; }
   </style>
 
-  <!-- Cielo -->
-  <rect width="900" height="300" rx="14" fill="url(#sky)"/>
-
-  <!-- Estrellas -->
-  <g fill="#fff">
-    <circle class="tw" cx="60"  cy="40"  r="1.6" style="animation-delay:-.2s"/>
-    <circle class="tw" cx="140" cy="90"  r="1.2" style="animation-delay:-1.4s"/>
-    <circle class="tw" cx="230" cy="30"  r="1.8" style="animation-delay:-2.1s"/>
-    <circle class="tw" cx="310" cy="70"  r="1.2" style="animation-delay:-.8s"/>
-    <circle class="tw" cx="640" cy="40"  r="1.6" style="animation-delay:-1.9s"/>
-    <circle class="tw" cx="720" cy="95"  r="1.2" style="animation-delay:-.5s"/>
-    <circle class="tw" cx="800" cy="35"  r="1.8" style="animation-delay:-2.6s"/>
-    <circle class="tw" cx="860" cy="80"  r="1.2" style="animation-delay:-1.1s"/>
-    <circle class="tw" cx="530" cy="22"  r="1.2" style="animation-delay:-2.3s"/>
-    <circle class="tw" cx="410" cy="26"  r="1.4" style="animation-delay:-.9s"/>
+  <rect width="900" height="300" rx="14" fill="url(#bg)"/>
+  <!-- Sello de fondo (dibujado, no depende de fuentes) -->
+  <g class="pulse" fill="none" stroke="#2b2566" stroke-width="3" stroke-linejoin="round">
+    <polygon points="450,18 530,150 450,282 370,150"/>
+    <polygon points="318,150 450,70 582,150 450,230"/>
+    <circle cx="450" cy="150" r="22"/>
   </g>
 
-  <!-- Sol synthwave -->
-  <circle cx="450" cy="150" r="100" fill="url(#sun)" opacity=".75" mask="url(#slits)"/>
-
-  <!-- Ciudad -->
-  <g fill="#0a0618">
-    <rect x="0"   y="236" width="60"  height="64"/>
-    <rect x="60"  y="214" width="46"  height="86"/>
-    <rect x="106" y="248" width="50"  height="52"/>
-    <rect x="156" y="226" width="40"  height="74"/>
-    <rect x="196" y="244" width="64"  height="56"/>
-    <rect x="260" y="220" width="44"  height="80"/>
-    <rect x="304" y="250" width="70"  height="50"/>
-    <rect x="526" y="248" width="70"  height="52"/>
-    <rect x="596" y="222" width="44"  height="78"/>
-    <rect x="640" y="244" width="60"  height="56"/>
-    <rect x="700" y="212" width="48"  height="88"/>
-    <rect x="748" y="240" width="50"  height="60"/>
-    <rect x="798" y="224" width="44"  height="76"/>
-    <rect x="842" y="246" width="58"  height="54"/>
-  </g>
-  <g fill="#ffd166">
-    <rect class="win" x="70"  y="224" width="5" height="5" style="animation-delay:-.4s"/>
-    <rect class="win" x="86"  y="238" width="5" height="5" style="animation-delay:-2.2s"/>
-    <rect class="win" x="168" y="236" width="5" height="5" style="animation-delay:-1.3s"/>
-    <rect class="win" x="272" y="232" width="5" height="5" style="animation-delay:-3s"/>
-    <rect class="win" x="608" y="234" width="5" height="5" style="animation-delay:-.9s"/>
-    <rect class="win" x="712" y="224" width="5" height="5" style="animation-delay:-2.7s"/>
-    <rect class="win" x="728" y="246" width="5" height="5" style="animation-delay:-1.7s"/>
-    <rect class="win" x="810" y="236" width="5" height="5" style="animation-delay:-.1s"/>
+  <!-- Dominio: anillos giratorios -->
+  <g fill="none" stroke-linecap="round">
+    <circle class="spin"  cx="450" cy="150" r="128" stroke="#3b82f6" stroke-width="2" stroke-dasharray="3 14" opacity=".8"/>
+    <circle class="spinr" cx="450" cy="150" r="104" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="40 18 6 18" opacity=".8"/>
+    <ellipse class="spin" cx="450" cy="150" rx="168" ry="46" stroke="#60a5fa" stroke-width="1.2" stroke-dasharray="2 10" opacity=".55"/>
   </g>
 
-  <!-- Titulo con brillo -->
-  <text class="sans glow" x="450" y="152" text-anchor="middle" font-size="104" font-weight="900" letter-spacing="16" fill="url(#title)" filter="url(#blur)">HERY</text>
-  <text class="sans" x="450" y="152" text-anchor="middle" font-size="104" font-weight="900" letter-spacing="16" fill="url(#title)" stroke="#0f0a24" stroke-width="6" paint-order="stroke">HERY</text>
+  <!-- Energia maldita fluyendo -->
+  <g fill="none" stroke="url(#wisp)" stroke-linecap="round">
+    <path class="flow"  d="M0 214 C 150 120, 300 290, 450 196 S 750 96, 900 186" stroke-width="3"/>
+    <path class="flow2" d="M0 96 C 160 200, 320 40, 470 120 S 760 230, 900 120" stroke-width="2"/>
+  </g>
+
+  <!-- Brasas azules -->
+  <g fill="#93c5fd">
+    <circle class="ember" cx="70"  cy="290" r="2"   style="animation-duration:7s;animation-delay:-1s"/>
+    <circle class="ember" cx="150" cy="296" r="1.6" style="animation-duration:9s;animation-delay:-5s"/>
+    <circle class="ember" cx="260" cy="292" r="2.2" style="animation-duration:8s;animation-delay:-3s"/>
+    <circle class="ember" cx="340" cy="298" r="1.4" style="animation-duration:10s;animation-delay:-7s"/>
+    <circle class="ember" cx="560" cy="294" r="1.8" style="animation-duration:8.5s;animation-delay:-2s"/>
+    <circle class="ember" cx="640" cy="298" r="2.2" style="animation-duration:9.5s;animation-delay:-6s"/>
+    <circle class="ember" cx="730" cy="292" r="1.5" style="animation-duration:7.5s;animation-delay:-4s"/>
+    <circle class="ember" cx="820" cy="296" r="2"   style="animation-duration:10.5s;animation-delay:-8s"/>
+  </g>
+
+  <!-- Tajo rojo -->
+  <g fill="none" stroke-linecap="round">
+    <path class="slash"  d="M70 262 L 830 38" stroke="#e11d48" stroke-width="5" filter="url(#soft)"/>
+    <path class="slash"  d="M70 262 L 830 38" stroke="#ffe4e6" stroke-width="1.4"/>
+    <path class="slash2" d="M96 276 L 790 66" stroke="#be123c" stroke-width="2" opacity=".8"/>
+  </g>
+
+  <!-- Titulo -->
+  <text class="sans" x="450" y="168" text-anchor="middle" font-size="104" letter-spacing="20" fill="#3b82f6" filter="url(#blur)" opacity=".75">HERY</text>
+  <text class="sans glitch-r" x="450" y="168" text-anchor="middle" font-size="104" letter-spacing="20" fill="#e11d48">HERY</text>
+  <text class="sans glitch-c" x="450" y="168" text-anchor="middle" font-size="104" letter-spacing="20" fill="#22d3ee">HERY</text>
+  <text class="sans" x="450" y="168" text-anchor="middle" font-size="104" letter-spacing="20" fill="none" stroke="#05040d" stroke-width="8" stroke-linejoin="round">HERY</text>
+  <text class="sans" x="450" y="168" text-anchor="middle" font-size="104" letter-spacing="20" fill="url(#titlefill)">HERY</text>
 
   <!-- Subtitulo -->
-  <text class="mono" x="450" y="196" text-anchor="middle" font-size="17" font-weight="700" letter-spacing="4" fill="#29e7ff" stroke="#0f0a24" stroke-width="4" paint-order="stroke">LV. PUPIL  ·  COMPETITIVE PROGRAMMER  ·  TUTOR</text>
-  <text class="mono" x="450" y="228" text-anchor="middle" font-size="14" letter-spacing="3" fill="#ffd166" stroke="#0f0a24" stroke-width="3" paint-order="stroke">PRESS START<tspan class="blink"> ▮</tspan></text>
+  <rect x="150" y="190" width="600" height="56" rx="10" fill="#05040d" opacity=".72"/>
+  <text class="mono" x="450" y="213" text-anchor="middle" font-size="16" font-weight="700" letter-spacing="3" fill="#bfdbfe">GRADO 3  ·  PROGRAMADOR COMPETITIVO  ·  TUTOR</text>
+  <text class="mono" x="450" y="236" text-anchor="middle" font-size="13" letter-spacing="2" fill="#a78bfa">// la energia se entrena todos los dias<tspan class="blink"> ▮</tspan></text>
 
-  <!-- Petalos de sakura -->
-  <g fill="#ffb7d5">
-    <g transform="translate(40,0)"  ><g class="fall" style="animation-duration:9s;animation-delay:-1s"><use href="#petal" xlink:href="#petal"/></g></g>
-    <g transform="translate(130,0)" ><g class="fall" style="animation-duration:12s;animation-delay:-6s"><use href="#petal" xlink:href="#petal" transform="scale(1.3)"/></g></g>
-    <g transform="translate(220,0)" ><g class="fall" style="animation-duration:10s;animation-delay:-3s"><use href="#petal" xlink:href="#petal" transform="scale(.9)"/></g></g>
-    <g transform="translate(330,0)" ><g class="fall" style="animation-duration:13s;animation-delay:-9s"><use href="#petal" xlink:href="#petal" transform="scale(1.1)"/></g></g>
-    <g transform="translate(450,0)" ><g class="fall" style="animation-duration:11s;animation-delay:-4s"><use href="#petal" xlink:href="#petal" transform="scale(1.4)"/></g></g>
-    <g transform="translate(560,0)" ><g class="fall" style="animation-duration:9.5s;animation-delay:-7s"><use href="#petal" xlink:href="#petal"/></g></g>
-    <g transform="translate(650,0)" ><g class="fall" style="animation-duration:12.5s;animation-delay:-2s"><use href="#petal" xlink:href="#petal" transform="scale(1.2)"/></g></g>
-    <g transform="translate(740,0)" ><g class="fall" style="animation-duration:10.5s;animation-delay:-8s"><use href="#petal" xlink:href="#petal" transform="scale(.8)"/></g></g>
-    <g transform="translate(810,0)" ><g class="fall" style="animation-duration:14s;animation-delay:-5s"><use href="#petal" xlink:href="#petal" transform="scale(1.3)"/></g></g>
-    <g transform="translate(870,0)" ><g class="fall" style="animation-duration:11.5s;animation-delay:-10s"><use href="#petal" xlink:href="#petal"/></g></g>
-  </g>
-
-  <rect x="1" y="1" width="898" height="298" rx="13" fill="none" stroke="#a855f7" stroke-opacity=".6" stroke-width="2"/>
+  <rect x="1" y="1" width="898" height="298" rx="13" fill="none" stroke="#7c3aed" stroke-opacity=".7" stroke-width="2"/>
 </svg>
